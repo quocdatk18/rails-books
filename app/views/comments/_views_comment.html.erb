@@ -1,0 +1,13 @@
+<div id = 'comments'>
+  <div class='comments'>
+      <div class='comment_top'>
+        <h1 class='count_comment'><%= @comments_total %> <%= t('.comment')%></h1>
+        <div class='sort'>
+          <%= sort_link(@q_comment, :updated_at, t('.sorted_by'), local: true) %>
+        </div>
+      </div>
+      <%= render partial: 'comments/form_add' %>
+      <%= render 'comments/list_comments' %>
+      </div>
+  </div>
+</div>

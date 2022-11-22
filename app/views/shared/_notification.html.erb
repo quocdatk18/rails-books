@@ -1,0 +1,31 @@
+<div id='message' <%= (notice.nil? && alert.nil?) ? 'hidden' : ''  %> >
+  <div class=' message <%= notice.nil? ? 'message--error' : 'message--success'  %>' style='animation: 0.3s ease 0s 1 normal none running slideInLeft, 1s linear 500s 1 normal forwards running fadeOut;'>
+    <div class='message__icon'>
+      <i class='<%= alert.nil? ? 'fas fa-check-circle' : 'fa-solid fa-xmark'  %>'></i>
+    </div>
+    <div class='message__body'>
+      <h3 class='message__title'><%= alert.nil? ?  t('.success'):  t('.errors')  %></h3>
+      <p class='message__msg'><%= notice || alert %></p>
+    </div>
+    <div class='message__close'>
+      <i class='fas fa-times'></i>
+    </div>
+  </div>
+</div>
+
+<script>
+const main = document.querySelector('#message');
+  if (main) {
+    // Auto remove message
+    const autoRemoveId = setTimeout(function () {
+      main.remove()
+    },3000);
+  // Remove message when clicked
+    main.onclick = function (e) {
+      if (e.target.closest('.message__close')) {
+        main.remove()
+        clearTimeout(autoRemoveId);
+      }
+    };
+  }
+</script>

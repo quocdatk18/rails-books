@@ -1,0 +1,18 @@
+<div class='categories_index'>
+  <%= render 'shared/success' %>
+  <div class='category_container'>
+    <h1><%= t('.title') %></h1>
+    <%= link_to t('.add'), new_admin_category_path, class: 'btn-new' %>
+    <table class='category_table'>
+      <thead>
+        <tr>
+          <th><%= sort_link(@q, :name, t('admin.categories.name'), defalt_order: :asc) %></th>
+          <th><%= t('admin.categories.description') %></th>
+          <th><%= t('.action')  %></th>
+        </tr>
+      </thead>
+      <%= render @categories %>
+    </table>
+    <%== pagy_bootstrap_nav(@pagy) %>
+  </div>
+</div>

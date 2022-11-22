@@ -1,0 +1,10 @@
+<tr>
+  <th scope='row'><%= book_borrow_counter + 1 %></th>
+  <td><%= link_to book_borrow.book.title, book_path(book_borrow.book) %></td>
+  <td><%= format_date(book_borrow.created_at) %></td>
+  <td><%= format_date(book_borrow.from) %></td>
+  <td><%= format_date(book_borrow.to) %></td>
+  <td class='<%= show_borrow_status(book_borrow) %>' ><%= BookBorrow.translated_status(book_borrow.status) %></td>
+  <td><%= link_to(t('.cancel'), book_borrow_path(book_borrow), method: :patch, 
+                  class: 'btn btn-outline-danger', data: { confirm: t('.confirm') }) if book_borrow.requested? %></td>
+</tr>

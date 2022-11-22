@@ -1,0 +1,43 @@
+.authentica {
+  background: var(--background-body);
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  .sub_authentica {
+    display: block;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    background: var(--background-form);
+    border-radius: 8px;
+    padding: 10px 4px 14px 6px;
+    opacity: 0.9;
+    position: relative;
+    .language {
+      position: absolute;
+      right: 6px;
+      top: 10px;
+      button {
+        display: block;
+        width: 50px;
+      }
+    }
+    .notion {
+      font-size: 10px;
+      margin-bottom: 0 !important;
+      height: 10px;
+    }
+    .new_user {
+      display: inline-block;
+      width: 100%;
+      padding: 0 10px;
+    }
+    .titles {
+      font-size: 20px;
+    }
+    .actions {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}

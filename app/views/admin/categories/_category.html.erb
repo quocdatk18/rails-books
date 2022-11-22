@@ -1,0 +1,13 @@
+<tbody class='tb_body'>
+  <tr>
+    <td><%= category.name %></td>
+    <td><%= category.description %></td>
+    <td class='flex'>
+      <span><%= link_to t('show'), admin_category_path(category), class: 'btn_custom' %></span>
+      <span><%= link_to t('edit'), edit_admin_category_path(category), class: 'btn_custom' %></span>
+      <span>
+        <%= link_to t('delete'), admin_category_path(category), method: :delete, data: { confirm: t('.comfirm_destroy')}, class: 'btn_custom' %>
+      </span>
+    </td>
+  </tr>
+</tbody

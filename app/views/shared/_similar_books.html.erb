@@ -1,0 +1,25 @@
+<div class='swiper mySwiper'>
+  <div class='swiper-wrapper'>
+    <% similars.each do |similar| %>
+      <div class='swiper-slide'>
+        <%= link_to book_path(similar) do  %>
+          <%= image_tag(show_image(similar.image), class: 'book_image') %>
+          <p><%= similar.title %></p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <div class='swiper-pagination'></div>
+</div>
+
+<script>
+  var swiper = new Swiper('.mySwiper', {
+  slidesPerView: 6,
+  spaceBetween: 30,
+  freeMode: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    },
+  });
+</script>

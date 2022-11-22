@@ -1,0 +1,21 @@
+<div class='container-fluid authentica'>
+  <div class= 'sub_authentica'>
+    <h2 class='text-center titles'><%= t('change') %></h2>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }, data: { turbo: false }) do |f| %>
+      <%= f.hidden_field :reset_password_token %>
+      <%= render 'layouts/alert',resource: resource %>
+      <div class='mb-3'>
+        <%= f.label :password %>
+        <%= f.password_field :password, autofocus: true, class: 'form-control' %>
+      </div>
+      <div class='mb-3'>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, autofocus: true, class: 'form-control' %>
+      </div>
+      <div class='actions'>
+        <%= f.submit t('change'), class: 'btn btn-primary w-100' %>
+      </div>
+    <% end %>
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

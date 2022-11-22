@@ -1,0 +1,8 @@
+<%= form_with(model: [@book, @comment], local: false, html: {  class: 'form' }) do |f|%>
+  <div class='user_comment'>
+    <%= f.text_field :content,class: 'input', required: true, placeholder: "#{I18n.t 'activerecord.attributes.comment.content'}" %>
+  </div>
+  <div class= 'submit' data-bs-dismiss='modal' >
+    <%= f.submit t('comment'), class: 'button' if current_user.present? %>
+  </div>
+<% end %>

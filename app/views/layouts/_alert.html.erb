@@ -1,0 +1,6 @@
+<% if resource.errors.any?%>
+  <% resource.errors.full_messages.each do |msg| %> 
+    <p style='color: red;' class= 'notion'><%= msg %></p>
+  <% end %>
+<% end %>
+

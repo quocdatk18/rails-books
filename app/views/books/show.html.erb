@@ -1,0 +1,36 @@
+<div class='detail_book'>
+  <div class='item-book'>
+    <%= image_tag(show_image(@book.image), class: 'book_image-show') %>
+    <div class='btn-borrow'>
+      <%= button_tag show_status(@book), button_borrow_attributes(@book) %>
+    </div>
+    <%= render 'shared/error', error_message: t('.can_not_borrow') if current_user.blank? %>
+    <div class='book-info'>
+      <div><%= t('.title') %> <%= @book.title %></div>
+      <div><%= t('.published_date') %><%= format_date(@book.published_date) %></div>
+      <div><%= t('.status') %> <%= Book.translated_status(@book.status) %></div>
+      <div class='flex'>
+        <p><%= t('.author') %></p>
+        <%= link_to @book.author.full_name, '#' %>
+      </div>
+      <div class='flex'>
+        <p class='deatail_author_book'><%= t('.supplier') %></p>
+        <%= link_to @book.supplier.name, '#', class: 'deatail_author_book_link' %>
+      </div>
+      <div><%= t('.price') %> <%= number_to_currency(@book.price) %></div>
+    </div>
+  </div>
+  <div class='detail_book-right'>
+    <p id='requested' class='text-danger'><%= t('.borrow_requested') if request_borrow?(current_user, @book) %></p>
+    <div class='text-center title_book_header'> <%= @book.title %></div>
+    <div class='text-center book_by'><%= t('.by') %> <%= @book.author.full_name %></div>
+    <p><%= t('.desciption') %> <%= @book.description %></p>
+  </div>
+</div>
+
+<%= render 'comments/views_comment' %>
+
+<h2 class='text-center similar_text'><%= t('.similar') %></h2>
+<%= render 'shared/similar_books', similars: @similars %>
+
+<%= render 'shared/borrow_book_modal', { book: @book, book_borrow: @book_borrow } %>

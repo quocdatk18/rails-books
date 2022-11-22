@@ -1,0 +1,4 @@
+$('.modal-body').replaceWith("<%= j (render 'comments/form_add') %>");
+$('.input').focus();
+$('.input').val('.input').val("<%= @comment.content %>");
+document.querySelectorAll('.form').forEach(item=>item.reset())

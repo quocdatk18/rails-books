@@ -1,0 +1,9 @@
+<% if @comment.parent_id.present? %>
+  $('.icon_delete').bind('ajax:success', function() {
+   $(this).closest('.reply_list').fadeOut();
+});
+<% else %>
+   $('.icon_delete').bind('ajax:success', function() {
+   $(this).closest('.comments_main').fadeOut();
+});
+<% end %>

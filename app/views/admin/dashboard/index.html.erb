@@ -1,0 +1,2 @@
+<h1><%= t('hello', user_name: current_admin.email) %> </h1>
+<h2 style= 'background: #333 ; width: 30% '><%= link_to t('log_out'), destroy_admin_session_path , method: :delete, class: 'dropdown-item' %></h2>

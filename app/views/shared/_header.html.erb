@@ -1,0 +1,7 @@
+<div class="navbar">
+  <%= link_to 'Home', books_path, class: 'active' %>
+  <%# <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>  %>
+  <a href="#"><i class="fa fa-fw fa-search"></i> Search</a> 
+  <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+  <a href="#"><i class="fa fa-fw fa-user"></i> <%= current_user.present? ? current_user.user_name : 'Login'%></a>
+</div>

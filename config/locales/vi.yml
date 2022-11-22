@@ -1,0 +1,171 @@
+vi:
+  title: 'Thư viện sách'
+  sign_up: 'Đăng ký'
+  sign_in: 'Đăng nhập'
+  log_out: 'Đăng xuất'
+  comment: 'Gửi'
+  reply: 'Trả lời'
+  confirm: 'Bạn có chắc muốn xóa comment?'
+  hello: 'Xin Chào %{user_name} '
+  home: 'Trang chủ'
+  male: 'Nam'
+  female: 'Nữ'
+  other : 'Khác'
+  success: 'Thành công'
+  errors: 'Lỗi'
+  already_accout: 'Đã có tài khoản?'
+  no_account: 'Chưa có tài khoản?'
+  send_mail: 'Gửi cho tôi hướng dẫn đặt lại mật khẩu'
+  forgot: 'Quên mật khẩu?'
+  change: 'Đổi mật khẩu'
+  show: 'Chi Tiết'
+  edit: 'Sửa'
+  delete: 'Xóa'
+  devise:
+    confirmations:
+      confirmed: 'Địa chỉ email của bạn đã được xác nhận thành công.'
+      send_instructions: 'Bạn sẽ nhận được một email có hướng dẫn về cách xác nhận địa chỉ email của bạn sau vài phút.'
+      send_paranoid_instructions: 'Nếu địa chỉ email của bạn tồn tại trong cơ sở dữ liệu của chúng tôi, bạn sẽ nhận được một email có hướng dẫn về cách xác nhận địa chỉ email của bạn sau vài phút.'
+    registrations:
+      signed_up_but_unconfirmed: 'Một tin nhắn với một liên kết xác nhận đã được gửi đến địa chỉ email của bạn. Vui lòng nhấp vào liên kết để kích hoạt tài khoản của bạn.'
+    sessions:
+      signed_in: 'Đăng nhập thành công.'
+      signed_out: 'Đăng xuất thành công.'
+    failure:
+      unauthenticated: 'Bạn cần đăng nhập hoặc đăng ký trước khi tiếp tục.'
+      inactive: 'Tài khoảng của bạn đã bị tạm khóa'
+      invalid: 'Email hoặc mật khẩu không hợp lệ'
+      unconfirmed: 'Bạn phải xác nhận địa chỉ email của mình trước khi tiếp tục.'
+      not_found_in_database: 'Email hoặc mật khẩu không hợp lệ.'
+    mailer:
+      confirmation_instructions:
+        welcome: 'Chào mừng '
+        descript: 'Bạn có thể xác nhận email tài khoản của mình thông qua liên kết bên dưới:'
+        confirm: 'Xác nhận tài khoản'
+      reset_password_instructions:
+        descript_one: 'Ai đó đã yêu cầu một liên kết để thay đổi mật khẩu của bạn. Bạn có thể làm điều này thông qua liên kết dưới đây.'
+        change: 'Thay đổi mật khẩu của tôi'
+        descript_two: 'Nếu bạn không yêu cầu điều này, vui lòng bỏ qua email này.'
+        descript_three: 'Mật khẩu của bạn sẽ không thay đổi cho đến khi bạn truy cập vào liên kết ở trên và tạo một mật khẩu mới.'
+      password_change:
+        descript: 'Chúng tôi đang liên hệ với bạn để thông báo rằng mật khẩu của bạn đã được thay đổi.'
+    passwords:
+      no_token: Bạn chỉ có thể truy cập trang này từ email đặt lại mật khẩu. Nếu bạn truy cập từ email đặt lại mật khẩu, xin chắc chắn rằng bạn dùng đường dẫn đầy đủ trong email.
+      send_instructions: Bạn sẽ nhận được email hướng dẫn thiết lập lại mật khẩu trong vài phút nữa.
+      send_paranoid_instructions: Nếu email của bạn có trong hệ thống, bạn sẽ nhận được đường dẫn khôi phục mật khẩu trong vài phút nữa qua email.
+      updated: Đổi mật khẩu thành công! Bạn hiện đang đăng nhập.
+      updated_not_active: Mật khẩu đã được đổi thành công.
+  activerecord:
+    models:
+      user: 'User'
+      admin: 'Admin'
+    attributes:
+      user:
+        user_name: 'Họ và tên'
+        gender: 'Giới Tính'
+        email: 'Địa chỉ email'
+        password: 'Mật khẩu'
+        password_confirmation: 'Nhập lại mật khẩu'
+        phone: 'Số điện thoại'
+        remember_me: 'nhớ tài khoản?'
+      admin:
+        email: 'Địa chỉ email'
+        password: 'Mật khẩu'
+        remember_me: 'nhớ tài khoản?'
+      book:
+        status_list:
+          available: 'Có thể mượn'
+          borrowed: 'Đang được mượn'
+          not_in_library: 'Không có trong thư viện'
+      comment:
+        content: 'Xin để lại bình luận '
+      book_borrow:
+        from: 'Ngày mượn'
+        to: 'Ngày trả'
+        created_at: 'Ngày yêu cầu'
+        book: 'Tên sách'
+        status: 'Trạng thái'
+        status_list:
+          requested: 'Chờ duyệt'
+          borrowing: 'Đang mượn'
+          returned: 'Đã trả sách'
+          canceled: 'Đã hủy yêu cầu'
+          out_of_date: 'Quá hạn mượn sách'
+      category:
+        name: 'Tên Thể Loại'
+        description: 'Mô Tả'
+  errors:
+    messages:
+      blank: 'không được để trống'
+      invalid: 'không đúng định dạng'
+      taken: 'đã được sử dụng'
+      not_found: 'không tồn tại trong hệ thống'
+      phone_not_number: 'Vui lòng số điện thoại chính xác'
+      books_not_found: "Không tìm thấy bất kỳ kết quả nào cho từ khóa '%{search_param}'."
+      date_borrow_invalid: 'Ngày mượn không hợp lệ'
+      can_not_cancel: 'Không thể hủy yêu cầu mượn sách'
+  shared:
+    search_books_form:
+      select_author: 'Chọn tác giả'
+      select_supplier: 'Chọn nhà xuất bản'
+      select_category: 'Chọn danh mục'
+      author_label: 'Tác giả'
+      category_label: 'Nhà xuất bản'
+      supplier_label: 'Danh mục'
+      search_label: 'Tìm kiếm sách'
+      search: 'Tìm kiếm'
+    borrow_book_modal:
+      borrow_book: 'Mượn sách %{book_title}'
+      submit: 'Xác nhận'
+  books:
+    index:
+      header_book: 'Trang chủ / Sách'
+      main_title: 'Khám phá thư viện sách của chúng tôi'
+      main_description: 'Có một cái gì đó cho tất cả mọi người'
+    show:
+      title_main: 'Chi tiết sách'
+      book_undefine: 'Không có sách'
+      title: 'Tiêu đề:'
+      published_date: 'Ngày xuất bản:'
+      price: 'Giá:'
+      status: 'Trạng Thái:'
+      author: 'Tác Giả:'
+      supplier: 'Nhà xuất bản: '
+      desciption: 'Mô tả:'
+      by: 'Viết bởi:'
+      borrow: 'Mượn Sách'
+      similar: 'Có Thể Bạn Thích'
+      can_not_borrow: 'Bạn phải đăng nhập để được mượn sách'
+      borrow_requested: 'Đã gửi yêu cầu mượn sách, vui lòng chờ được duyệt'
+  admin:
+    categories:
+      name: 'Tên Thể Loại'
+      description: 'Mô Tả'
+      form:
+        submit: 'Hoàn Thành'
+      index:
+        title: 'Quản Lý Thể Loại'
+        action: 'Quản Lý'
+        add: 'Thêm Mới Thể Loại'
+      show:
+        book: 'Sách Liên Quan'
+        detail: 'Chi Tiết / %{category_name}'
+      category:
+        comfirm_destroy: 'Bạn có chắc chắn muốn xóa ?'
+  comments:
+    views_comment:
+      comment: 'Bình luận'
+      sorted_by: 'Sắp xếp'
+      newest: 'mới nhất'
+      oldest: 'cũ nhất'
+    comment:
+      edit: 'Chỉnh sửa bình luận'
+  book_borrows:
+    index:
+      title: 'Lịch sử mượn sách'
+      action: 'Thao tác'
+    update:
+      success: 'Hủy yêu cầu mượn sách thành công'
+    book_borrow:
+      cancel: 'Hủy yêu cầu'
+      confirm: 'Xác nhận hủy yêu cầu mượn sách?'

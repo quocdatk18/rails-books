@@ -1,0 +1,26 @@
+<div class='container'>
+  <h1><%= t('.header_book') %></h1>
+  <div class='book_header text-center'>
+    <h2><%= t('.main_title') %></h2>
+    <p><%= t('.main_description') %></p>
+  </div>
+  <hr>
+  <div class='tags_category d-flex justify-content-around'>
+    <% @categories.each do |category| %>
+      <%= link_to category.name, '#', class: 'tag' %>
+    <% end %>
+  </div>
+  <% if @books.empty? %>
+    <%= render 'shared/error', error_message: t('errors.messages.books_not_found', search_param: params.dig(:q, :search_cont)) %>
+  <% else %>
+    <div class='book_container'>
+      <div class='flex book_index'>
+        <%= render @books %>
+      </div>
+      <%== pagy_bootstrap_nav(@pagy) %>
+    </div>
+  <% end %>
+  <div class='search-bar'>
+    <%= render 'shared/search_books_form' %>
+  </div>
+</div>

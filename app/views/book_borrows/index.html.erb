@@ -1,0 +1,21 @@
+<div class='container'>
+  <h3><%= t('.title') %></h3>
+  <%= render 'shared/error', error_message: flash[:errors] %>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th scope='col'>#</th>
+        <th scope='col'><%= BookBorrow.human_attribute_name('book') %></th>
+        <th scope='col'><%= sort_link(@q, :created_at, BookBorrow.human_attribute_name('created_at'), default_order: :desc) %></th>
+        <th scope='col'><%= sort_link(@q, :from, BookBorrow.human_attribute_name('from'), default_order: :desc) %></th>
+        <th scope='col'><%= sort_link(@q, :to, BookBorrow.human_attribute_name('to'), default_order: :desc) %></th>
+        <th scope='col'><%= sort_link(@q, :status, BookBorrow.human_attribute_name('status'), default_order: :desc) %></th>
+        <th scope='col'><%= t('.action') %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @book_borrows %>
+    </tbody>
+  </table>
+  <%== pagy_bootstrap_nav(@pagy) %>
+</div>

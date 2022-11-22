@@ -1,0 +1,6 @@
+<% if @comment.parent_id.present? %>
+  $('#reply_li_<%= @comment.id %>').replaceWith("<%= j render @comment %>");
+<% else %>
+  $('#comments_li_<%= @comment.id %>').replaceWith("<%= j render @comment %>");
+  document.querySelectorAll('.form').forEach(item=>item.reset());
+<% end %>

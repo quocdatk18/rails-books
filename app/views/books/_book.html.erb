@@ -1,0 +1,7 @@
+<%= link_to book_path(book) do %>
+<div class='book-item'>
+  <%= image_tag(show_image(book.image), class: 'book_image') %>
+  <div class='book_title'><%= book.title %></div>
+  <div class='book_author'><%= name_and_published_date(book.author.full_name, book.published_date) %></div>
+</div>
+<% end %>

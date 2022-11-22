@@ -1,0 +1,6 @@
+<% if @comment.parent_id.present? %>
+  $('<%= escape_javascript(render @comment) %>').prependTo('#comment_<%= @comment.parent_id %>_replies');
+<% else %>
+  $('<%= escape_javascript(render @comment) %>').prependTo('.list_comments');
+  document.querySelectorAll('.form').forEach(item=>item.reset())
+<% end %>

@@ -1,0 +1,38 @@
+<div class='rep_comments'>
+  <ul class='list_rep_comments' id='comment_<%= comment_id %>_replies'>
+    <% @replies&.each do |reply| %>
+      <% if comment_id == reply.parent_id %>
+        <li class= 'reply_list' id='reply_li_<%= reply.id %>' >
+          <div class='reply_list_item'>
+            <div class= 'image_user'>
+              <%= image_tag(show_image(reply.user.avatar), class: 'avatar_user') %>
+            </div>
+            <div class='cmt'>
+              <div class='cmt_user'>
+                <span><%= reply.user.user_name%></span>
+              </div>
+              <div class='cmt_user_content'>
+                <%= reply.content%>
+              </div>
+            </div>
+            <% if (current_user.present? && reply.user.id == current_user.id) %>
+              <span class= 'icon_delete'><%= link_to '', book_comment_path(book_id: reply.book.id, id: reply.id), method: :delete, data: { confirm: t('confirm') }, remote: :true, class: 'fa-solid fa-trash' %></span>
+              <span class= 'icon_edit' data-bs-toggle='modal' data-bs-target='#exampleModal'><%= link_to '', edit_book_comment_path(book_id: reply.book.id, id: reply.id),remote: :true, class: 'fa-sharp fa-solid fa-pen' %></span>
+              <div class='modal fade' id='exampleModal' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+                <div class='modal-dialog'>
+                  <div class='modal-content'>
+                    <div class='modal-header'>
+                      <h5 class='modal-title' id='exampleModalLabel'><%= t('.edit')%></h5>
+                      <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                    </div>
+                    <div class='modal-body'></div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

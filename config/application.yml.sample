@@ -1,0 +1,7 @@
+DATABASE_USER_NAME: 'your_db_user_name'
+DATABASE_PASSWORD: 'your_db_password'
+DEVELOPMENT_DATABASE_NAME: 'developement_db_name'
+TEST_DATABASE_NAME: 'test_db_name'
+PRODUCTION_DATABASE_NAME: 'production_db_name'
+MAIL_USER_NAME :'mail_user_name'
+MAIL_PASSWORD : 'passsword_mail'

@@ -1,0 +1,9 @@
+<%= form_with(model: @comment, url: book_comments_path(@book), local: false, html: {  class: 'form' }) do |f|%>
+  <%= f.hidden_field :parent_id, value: parent_id %>
+  <div class='user_comment'>
+    <%= f.text_field :content,class: 'input', required: true, placeholder: "#{I18n.t 'activerecord.attributes.comment.content'}"%>
+  </div>
+  <div class= 'submit'>
+    <%= f.submit  t('reply'), class: 'button' %>
+  </div>
+<% end %>

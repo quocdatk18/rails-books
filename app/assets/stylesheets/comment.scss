@@ -1,0 +1,206 @@
+.comments {
+  max-width: 85%;
+  margin: 0 auto;
+  border-radius: 5px;
+  background: var(--background-comment);
+  border: 1px solid #DBDBDB;
+  .comment_top {
+    height: 80px;
+    margin: 0 auto;
+    width: 96%;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    .count_comment {
+      color: var(--text-gray);
+      font-size: 14px;
+    }
+    .sort {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      span {
+        margin-right: 10px;
+      }
+    }
+  }
+  .comment_bottom {
+    display: flex;
+    margin: 10px auto;
+    width: 96%;
+    .image_user {
+      width: 50px;
+      height: 50px;
+      .avatar_user {
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .form {
+      width: 100%;
+      height: 100%;
+      .user_comment {
+        background: var( --backgound-list-comment);
+        display: flex;
+        height: 100%;
+        margin: 10px auto;
+        padding: 10px 0;
+        width: 96%;
+        .input {
+          padding: 5px;
+          display: block;
+          height: 32px;
+          border: none;
+          margin: 0 auto;
+          outline: none;
+          width: 100%;
+        }
+      }
+      .submit {
+        align-items: center;
+        display: flex;
+        height: 40px;
+        justify-content: flex-end;
+        margin: 0 auto;
+        width: 96%;
+        .button {
+          background-color: #1094f4;
+          border: none;
+          color: #fff;
+          font-weight: 600;
+          padding: 4px 8px;
+        }
+      }
+    }
+  }
+  #list_comments {
+    background: var( --backgound-list-comment);
+    .list_comments {
+      list-style-type: none;
+      max-height: 360px;
+      height: 100%;
+      overflow: auto;
+      padding: 10px;
+      .comments_main {
+        position: relative;
+        .comments_content {
+          display: flex;
+          width: 100%;
+          .image_user {
+            .avatar_user {
+              height: 50px;
+              width: 50px;
+            }
+          }
+          .comment {
+            display: flex;
+            flex-direction: column;
+            margin-left: 8px;
+            width: 100%;
+            span {
+              color: #3d3dff;
+              font-size: 16px;
+            }
+            .icon_delete {
+              position: absolute;
+              right: 0;
+              cursor: pointer;
+              top: 0;
+              a {
+                color: red;
+              }
+            }
+            .icon_edit {
+              position: absolute;
+              right: 0;
+              cursor: pointer;
+              top: 25px;
+            }
+            .btn_replie {
+              align-items: center;
+              cursor: pointer;
+              display: flex;
+              border-bottom: 1px solid #333;
+            }
+          }
+        }
+        &::after{
+          position: absolute;
+          content: '';
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background-color: rgb(202, 202, 202);
+        }
+      }
+    }
+  }
+}
+
+.btn-select {
+  border: 1px solid #333 !important;
+}
+
+.ul {
+  transform: translate(-39px, 40px) !important;
+}
+
+.reply_list {
+  height: auto;
+  width: 100%;
+  position: relative;
+  .reply_list_item {
+    border-bottom: 1px solid #a7a7a7;
+    display: flex;
+    height: auto;
+    padding: 8px 0;
+    width: 100%;
+  }
+}
+
+.cmt {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin-left: 8px;
+  width: 100%;
+}
+
+.form {
+  width: 100%;
+  height: 100%;
+  .user_comment {
+    background: var(--backgound-list-comment);
+    display: flex;
+    border: 1px solid #b99c9c;
+    margin: 10px auto;
+    padding: 10px 0;
+    width: 96%;
+    .input {
+      padding: 5px;
+      display: block;
+      height: 100%;
+      border: none;
+      margin: 0 auto;
+      outline: none;
+      width: 100%;
+    }
+  }
+  .submit {
+    align-items: center;
+    display: flex;
+    height: 40px;
+    justify-content: flex-end;
+    margin: 0 auto;
+    width: 96%;
+    .button {
+      background-color: #1094f4;
+      border: none;
+      color: #fff;
+      font-weight: 600;
+      padding: 4px 8px;
+    }
+  }
+}

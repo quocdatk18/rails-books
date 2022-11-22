@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: 1
+  from: 2022-09-22
+  to: 2022-09-22
+  book: one
+  user: one
+
+two:
+  status: 1
+  from: 2022-09-22
+  to: 2022-09-22
+  book: two
+  user: two
